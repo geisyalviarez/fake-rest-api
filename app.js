@@ -10,7 +10,9 @@ app.post("/authenticate", (req, res, next) => {
     userRol: "student",
   });
 });
-
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
