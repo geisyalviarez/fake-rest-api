@@ -5,9 +5,11 @@ const PORT = process.env.PORT || 5001;
 app.post("/authenticate", (req, res, next) => {
   res.json({
     accesssToken: "xxxyyyzzz",
-    userId: "MarianaC",
-    userName: "Mariana Contreras",
-    userRol: "student",
+    user: {
+      userId: "MarianaC",
+      userName: "Mariana Contreras",
+      userRol: "student",
+    },
   });
 });
 app.get("/", (req, res) => {
