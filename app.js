@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 const PORT = process.env.PORT || 5001;
 
-app.post("/authenticate", (req, res) => {
+app.post("authenticate", (req, res) => {
   res.status(201).json({
     accesssToken: "xxxyyyzzz",
     user: {
@@ -13,7 +13,7 @@ app.post("/authenticate", (req, res) => {
   });
 });
 
-app.get("/students/:studentId", (req, res) => {
+app.get("students/:studentId", (req, res) => {
   const { studentId } = req.params;
   res.status(200).json({
     studentId: studentId,
