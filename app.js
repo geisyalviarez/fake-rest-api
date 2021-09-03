@@ -13,8 +13,8 @@ app.post("/authenticate", (req, res) => {
   });
 });
 
-app.get("/students/:studentId", (req, res) => {
-  const { studentId } = req.params;
+app.get("/students/:studentId/:lapse", (req, res) => {
+  const { studentId, lapse } = req.params;
   res.status(200).json({
     studentId: studentId,
     studentName: "Mariana Contreras",
@@ -22,6 +22,7 @@ app.get("/students/:studentId", (req, res) => {
     phone: "4141234545",
     enrollments: [
       {
+        lapse: "2021-2022",
         fileNumber: null,
         registryNumber: 87654321,
         career: "Contaduria Pública",
@@ -43,10 +44,6 @@ app.get("/students/:studentId", (req, res) => {
             date: "10/07/2021",
             amount: 7,
           },
-        ],
-        course: [
-          { description: "math ", professor: "pedro" },
-          { description: "computation ", professor: "manuel" },
         ],
       },
     ],
